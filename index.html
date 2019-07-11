@@ -1,0 +1,15 @@
+<html>
+  <head> </head>
+  <body>
+    <button id="b">Click Me</button>
+    <script>
+      const b = document.getElementById("b");
+      b.addEventListener("click", () => {
+        window.top.postMessage(
+          JSON.stringify({ cmd: "reminder", data: "123" }),
+          "*"
+        );
+      });
+    </script>
+  </body>
+</html>
