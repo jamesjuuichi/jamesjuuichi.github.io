@@ -1,12 +1,20 @@
 <html>
   <head> </head>
   <body>
-    <button id="b">Click Me</button>
+    <button id="b">Click Me to send reminder</button>
+    <button id="c">Click Me to send navigate</button>
     <script>
       const b = document.getElementById("b");
       b.addEventListener("click", () => {
         window.top.postMessage(
           JSON.stringify({ cmd: "reminder", data: "123" }),
+          "*"
+        );
+      });
+      const c = document.getElementById("c");
+      c.addEventListener("click", () => {
+        window.top.postMessage(
+          JSON.stringify({ cmd: "navigate", data: "https://shopee.sg/navigate" }),
           "*"
         );
       });
