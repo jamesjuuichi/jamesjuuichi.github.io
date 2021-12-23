@@ -8,5 +8,12 @@
         document.cookie = 'set=' + +new Date() + ';';
       });
     </script>
+    <button id="c">Click to to send message</button>
+    <script>
+      const c = document.getElementById("c");
+      c.addEventListener("click", () => {
+        window.postMessage(JSON.stringify({cmd: 'reminder', data: 'WWW' }), window.parent);
+      });
+    </script>
   </body>
 </html>
